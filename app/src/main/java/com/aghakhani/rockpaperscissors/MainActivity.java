@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView computerChoiceImageView; // ImageView to show the computer's choice
     private Button rockButton, paperButton, scissorsButton; // Buttons for user's choices
 
+    public com.airbnb.lottie.LottieAnimationView lottieAnimationView;
+
     // Array of possible choices
     private String[] choices = {"Rock", "Paper", "Scissors"};
     // Array of drawable resources for each choice
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         rockButton = findViewById(R.id.rockButton);
         paperButton = findViewById(R.id.paperButton);
         scissorsButton = findViewById(R.id.scissorsButton);
-
+        lottieAnimationView = findViewById(R.id.LottieAnimation);
         // Set click listener for the Rock button
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     // Main game logic function
     private void playGame(String userChoice) {
         computerChoiceImageView.setVisibility(View.VISIBLE);
+        lottieAnimationView.setVisibility(View.INVISIBLE);
         // Generate a random choice for the computer
         Random random = new Random();
         int computerIndex = random.nextInt(3); // Random number between 0 and 2

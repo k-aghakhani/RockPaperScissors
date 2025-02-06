@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -12,6 +12,8 @@
 
     <!-- TextView to display the game result -->
     <TextView
+        android:layout_above="@id/LottieAnimation"
+        android:layout_centerHorizontal="true"
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +24,7 @@
 
     <!-- ImageView to show the computer's choice -->
     <ImageView
+        android:layout_centerInParent="true"
         android:visibility="invisible"
         android:id="@+id/computerChoiceImageView"
         android:layout_width="100dp"
@@ -31,6 +34,8 @@
         android:layout_marginTop="16dp"/>
 
     <com.airbnb.lottie.LottieAnimationView
+        android:layout_centerInParent="true"
+        android:id="@+id/LottieAnimation"
         android:layout_width="300dp"
         android:layout_height="300dp"
         app:lottie_loop="true"
@@ -39,6 +44,8 @@
 
     <!-- Buttons for user's choices -->
     <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/LottieAnimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -66,4 +73,4 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
