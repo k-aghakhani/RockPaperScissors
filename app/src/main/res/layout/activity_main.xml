@@ -22,12 +22,20 @@
 
     <!-- ImageView to show the computer's choice -->
     <ImageView
+        android:visibility="invisible"
         android:id="@+id/computerChoiceImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:contentDescription="Computer Choice"
         android:src="@drawable/ic_launcher_foreground"
         android:layout_marginTop="16dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:lottie_loop="true"
+        app:lottie_fileName="wait.json"
+        app:lottie_autoPlay="true"/>
 
     <!-- Buttons for user's choices -->
     <LinearLayout

@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Main game logic function
     private void playGame(String userChoice) {
+        computerChoiceImageView.setVisibility(View.VISIBLE);
         // Generate a random choice for the computer
         Random random = new Random();
         int computerIndex = random.nextInt(3); // Random number between 0 and 2
