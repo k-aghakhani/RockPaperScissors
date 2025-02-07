@@ -1,5 +1,6 @@
 package com.aghakhani.rockpaperscissors;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     // Array of possible choices
     private String[] choices = {"Rock", "Paper", "Scissors"};
     // Array of drawable resources for each choice
+
+    private MediaPlayer mediaPlayer;
     private int[] choiceImages = {
             R.drawable.ic_rock, // Image for Rock
             R.drawable.ic_paper, // Image for Paper
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.click_sound);
 
         // Initialize UI components
         resultTextView = findViewById(R.id.resultTextView);
@@ -50,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer.start();
                 playGame("Rock"); // Call the game logic with "Rock" as the user's choice
             }
         });
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         paperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer.start();
                 playGame("Paper"); // Call the game logic with "Paper" as the user's choice
             }
         });
@@ -66,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         scissorsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer.start();
                 playGame("Scissors"); // Call the game logic with "Scissors" as the user's choice
             }
         });
