@@ -5,75 +5,115 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- TextView to display the game result -->
+    <!-- Score TextView -->
     <TextView
-        android:layout_above="@id/LottieAnimation"
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You: 0 | Computer: 0"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true"
+        android:padding="8dp"/>
+
+    <!-- Result TextView -->
+    <TextView
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Make your choice!"
         android:textSize="24sp"
-        android:gravity="center"
+        android:layout_below="@id/scoreTextView"
+        android:layout_centerHorizontal="true"
         android:padding="16dp"/>
 
-    <!-- ImageView to show the computer's choice -->
+    <!-- Timer TextView -->
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time: 10"
+        android:textSize="20sp"
+        android:layout_below="@id/resultTextView"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"/>
+
+    <!-- User's Choice ImageView -->
     <ImageView
-        android:layout_centerInParent="true"
+        android:id="@+id/userChoiceImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/timerTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
         android:visibility="invisible"
+        android:contentDescription="User Choice"/>
+
+    <!-- Computer's Choice ImageView -->
+    <ImageView
         android:id="@+id/computerChoiceImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:contentDescription="Computer Choice"
-        android:src="@drawable/ic_launcher_foreground"
-        android:layout_marginTop="16dp"/>
+        android:layout_below="@id/timerTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        android:contentDescription="Computer Choice"/>
 
+    <!-- Lottie Animation -->
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_centerInParent="true"
         android:id="@+id/LottieAnimation"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        app:lottie_loop="true"
+        android:layout_centerInParent="true"
+        app:lottie_loop="false"
         app:lottie_fileName="wait.json"
         app:lottie_autoPlay="true"/>
 
-    <!-- Buttons for user's choices -->
+    <!-- Buttons Layout -->
     <LinearLayout
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/LottieAnimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/LottieAnimation"
+        android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="16dp">
 
         <Button
-            android:background="@drawable/button_style"
             android:id="@+id/rockButton"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
             android:text="Rock"/>
 
         <Button
-            android:background="@drawable/button_style"
             android:id="@+id/paperButton"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
             android:text="Paper"
             android:layout_marginStart="8dp"/>
 
         <Button
-            android:background="@drawable/button_style"
             android:id="@+id/scissorsButton"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
             android:text="Scissors"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
+    <!-- Theme Toggle Button -->
+    <Button
+        android:id="@+id/themeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toggle Theme"
+        android:background="@drawable/button_style"
+        android:layout_below="@id/LottieAnimation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
 </RelativeLayout>
